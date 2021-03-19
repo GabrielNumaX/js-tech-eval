@@ -24,13 +24,11 @@ const COMMA_ENTRIES = [ // First name, City, Birth date
 
     for(let i = 0; i < arr.length; i++) {
 
-      arr[i] = arr[i].split('$ ');
+      arr[i] = arr[i].split(' $ ');
 
       const name = `${arr[i][3]}`
       let city = `${arr[i][0]}`;
-      city = city.trim();
       let dob = `${arr[i][1]}`;
-      dob = dob.trim();
 
       city = city.replace(/LA/, 'Los Angeles');
       city = city.replace(/NYC/, 'New York City');
@@ -62,3 +60,11 @@ const COMMA_ENTRIES = [ // First name, City, Birth date
   //   Rigoberto New York City 12/1/1962
   
   // WRITE YOUR SPECS HERE
+  /*
+  commaParse function just removes all ocurrences using replace method
+
+  dollarParse first uses split to remove all ' $ ' ocurrences
+  then giving that the format should be fixed extracts name, city and date of birth.
+  after that city accronyms get replaces (just those cases considered) and last
+  all '-' ocurrences gets replaces from dob
+  */
